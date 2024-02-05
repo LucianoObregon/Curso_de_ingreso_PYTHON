@@ -30,7 +30,7 @@ class App(customtkinter.CTk):
         self.txt_importe.grid(row=0, column=1)
 
         self.label2 = customtkinter.CTkLabel(
-            master=self, text="% de Descuento")
+            master=self, text="Descuento") #acá cambié el "% de descuento" por "incremento" porque me daba error al usarlo en el self.txt
         self.label2.grid(row=1, column=0, padx=20, pady=10)
 
         self.txt_descuento = customtkinter.CTkEntry(master=self)
@@ -41,7 +41,12 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        importe = int(self.txt_importe.get())
+        descuento = int(self.txt_descuento.get())
+        porcentaje = descuento / 100
+        descuento_porcentaje = porcentaje * importe
+        total = importe - descuento_porcentaje
+        alert("Sueldo", "El importe total es de "+str(total))
 
 
 if __name__ == "__main__":
