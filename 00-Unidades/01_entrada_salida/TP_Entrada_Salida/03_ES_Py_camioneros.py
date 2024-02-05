@@ -3,10 +3,9 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
-
 '''
-nombre:
-apellido:
+nombre: Luciano
+apellido: Obregón
 ---
 TP: ES_Camioneros
 ---
@@ -23,12 +22,10 @@ Enunciado:
     si sabemos que cada camión puede ir a una velocidad máxima y constante de 90 km/h  
 
 '''
-
 class App(customtkinter.CTk):
     
     def __init__(self):
         super().__init__()
-        
         self.title("UTN FRA")
 
         self.label_1 = customtkinter.CTkLabel(master=self, text="Toneladas")
@@ -48,17 +45,21 @@ class App(customtkinter.CTk):
         
         self.btn_tiempo_llegada = customtkinter.CTkButton(master=self, text="Calcular tiempo de llegada", command=self.btn_tiempo_llegada_on_click)
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
-    
+
     def btn_cantidad_camiones_on_click(self):
-        toneladas = float(self.txt_toneladas.get())
-        tone_a_kg = toneladas * 1000
-        camiones = tone_a_kg // 3500
-        alert("Camiones necesarios", "Se necesitan "+str(camiones)+ " camion/camiones")
+            toneladas = float(self.txt_toneladas.get())
+            camiones = 1+(toneladas * 1000) // 3500 #fue la mejor solución que encontré ya que buscando en internet me salían cosas de import math o codigos que no vimos aún así que preferí usar esto así
+            alert("Cantidad de Camiones", "Se necesitan " +str(camiones)+ " camiones para transportar "+str(toneladas)+ " toneladas de materiales.")
+
 
     def btn_tiempo_llegada_on_click(self):
-        pass
-    
-    
+            kilometros = float(self.txt_kilometros.get())
+            velocidad_camion = 90
+            tiempo_horas = int(kilometros / velocidad_camion)
+            tiempo_minutos = int((kilometros % velocidad_camion) / (velocidad_camion / 60))
+            alert("Tiempo de Llegada", "Los camiones tardarán "+str(tiempo_horas)+ " horas y "+str(tiempo_minutos)+ " minutos en llegar a su destino.")
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
