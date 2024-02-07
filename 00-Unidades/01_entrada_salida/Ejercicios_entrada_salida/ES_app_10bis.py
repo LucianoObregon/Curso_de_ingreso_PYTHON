@@ -30,7 +30,7 @@ class App(customtkinter.CTk):
         self.txt_importe.grid(row=0, column=1)
 
         self.label2 = customtkinter.CTkLabel(
-            master=self, text="Descuento") #acá cambié el "% de descuento" por "incremento" porque me daba error al usarlo en el self.txt
+            master=self, text="% de Descuento") 
         self.label2.grid(row=1, column=0, padx=20, pady=10)
 
         self.txt_descuento = customtkinter.CTkEntry(master=self)

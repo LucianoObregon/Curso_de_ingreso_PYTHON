@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
         self.txt_sueldo = customtkinter.CTkEntry(master=self)
         self.txt_sueldo.grid(row=0, column=1)
         
-        self.label2 = customtkinter.CTkLabel(master=self, text="Incremento") #acá cambié el "% de incremento" por "incremento" porque me daba error al usarlo en el self.txt
+        self.label2 = customtkinter.CTkLabel(master=self, text="% de Incremento") 
         self.label2.grid(row=1, column=0, padx=20, pady=10)
         
         self.txt_incremento = customtkinter.CTkEntry(master=self)

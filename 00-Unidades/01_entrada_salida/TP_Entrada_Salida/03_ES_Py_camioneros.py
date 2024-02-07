@@ -3,6 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
+import math
 '''
 nombre: Luciano
 apellido: Obregón
@@ -48,7 +49,7 @@ class App(customtkinter.CTk):
 
     def btn_cantidad_camiones_on_click(self):
             toneladas = float(self.txt_toneladas.get())
-            camiones = 1+(toneladas * 1000) // 3500 #fue la mejor solución que encontré ya que buscando en internet me salían cosas de import math o codigos que no vimos aún así que preferí usar esto así
+            camiones = math.ceil((toneladas * 1000) / 3500) #fue la mejor solución que encontré ya que buscando en internet me salían cosas de import math o codigos que no vimos aún así que preferí usar esto así
             alert("Cantidad de Camiones", "Se necesitan " +str(camiones)+ " camiones para transportar "+str(toneladas)+ " toneladas de materiales.")
 
 
