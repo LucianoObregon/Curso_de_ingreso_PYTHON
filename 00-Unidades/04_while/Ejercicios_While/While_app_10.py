@@ -37,9 +37,31 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma_positivos = 0
+        suma_negativos = 0
+        contador_positivos = 0
+        contador_negativos = 0
+        contador_ceros = 0
 
-    
+        
+        while True:
+            numero_a = prompt("Numero", "Ingrese un número:")
+            if(numero_a == None):
+                break
+            else:
+                numero_a = int(numero_a)
+                if numero_a > 0:
+                    numero = int(numero_a)
+                    suma_positivos += numero
+                    contador_positivos += 1
+                elif numero_a == 0:
+                    contador_ceros +=1
+                else:
+                    numero_b = int(numero_a)
+                    suma_negativos += numero_b
+                    contador_negativos += 1
+        mensaje ="Suma positivos = "+str(suma_positivos)+"\nSuma negativos = "+str(suma_negativos)+"\nCantidad de positivos = "+str(contador_positivos)+"\nContador de negativos = "+str(contador_negativos)+"\nla cantidad de ceros es = "+str(contador_ceros)+"\nla diferencia entre la cantidad de negativos y positivos es = "+str(contador_positivos-contador_negativos)
+        alert("Numeros", mensaje)
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
