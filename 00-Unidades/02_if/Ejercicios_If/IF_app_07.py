@@ -42,7 +42,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad_persona = int(self.txt_edad.get())
+        nacionalidad = self.combobox_tipo.get()
+        if edad_persona >=16 and edad_persona < 18 and nacionalidad == "NATIVO" :
+            alert("Enunciado", "Su voto es opcional, no es obligatorio")
+        elif edad_persona >=16 and edad_persona < 18 and nacionalidad == "NATURALIZADO" :
+            alert("enunciado", "Usted no puede votar")
+        elif edad_persona >=18 :
+            alert("Enunciado", "Su voto es obligatorio")
+        else: alert("Enunciado", "Usted no puede votar")
+        
         
         
     
