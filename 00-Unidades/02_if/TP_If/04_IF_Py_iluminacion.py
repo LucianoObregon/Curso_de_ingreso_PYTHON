@@ -47,44 +47,84 @@ class App(customtkinter.CTk):
         marca_luz = self.combobox_marca.get()
         cantidad_lamparas = int(self.combobox_cantidad.get())
         precio_total = precio_lamparas * cantidad_lamparas
-        if precio_total > 4000:
-            descuento_a = precio_total * 0.05
-            precio_total = precio_total - descuento_a
-        else:
-            pass
         if cantidad_lamparas >= 6:
             descuento = precio_total * 0.5
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 5 and marca_luz == "ArgentinaLuz":
             descuento = precio_total * 0.4
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 5 and marca_luz != "ArgentinaLuz":
             descuento = precio_total * 0.3
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 4 and marca_luz == "ArgentinaLuz" or marca_luz == "FelipeLamparas":
             descuento = precio_total * 0.25
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 4 and marca_luz != "ArgentinaLuz" and marca_luz != "FelipeLamparas":
             descuento = precio_total * 0.2
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 3 and marca_luz == "ArgentinaLuz":
             descuento = precio_total * 0.15
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 3 and marca_luz == "FelipeLamparas":
             descuento = precio_total * 0.1
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
         elif cantidad_lamparas == 3 and marca_luz != "ArgentinaLuz" and marca_luz != "FelipeLamparas":
             descuento = precio_total * 0.05
             precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
             alert("Precio", "Su precio final es de "+str(precio_condescuento))
-        else: 
+        else:
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass 
             alert("Precio", "Su precio final es de "+str(precio_total))
         
 

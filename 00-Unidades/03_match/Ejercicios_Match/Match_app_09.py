@@ -57,7 +57,39 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino = self.combobox_destino.get()
+        estacion = self.combobox_estaciones.get()
+        precio = int(15000)
+        match estacion:
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        precio_descuento = precio - precio * 0.2
+                        alert("Bariloche", "El precio es de $"+str(precio_descuento)) 
+                    case "Cataratas" | "Cordoba":
+                        precio_descuento = precio - precio * 0.1
+                        alert("Cataratas/Cordoba", "El precio es de $"+str(precio_descuento))
+                    case "Mar del plata":
+                        precio_aumento = precio + precio * 0.2
+                        alert("Mar del plata", "El precio es de $"+str(precio_aumento))
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        precio_aumento = precio + precio * 0.2
+                        alert("Bariloche", "El precio es de $"+str(precio_aumento)) 
+                    case "Cataratas" | "Cordoba":
+                        precio_descuento = precio - precio * 0.1
+                        alert("Cataratas/Cordoba", "El precio es de $"+str(precio_descuento))
+                    case "Mar del plata":
+                        precio_descuento = precio - precio * 0.2
+                        alert("Mar del plata", "El precio es de $"+str(precio_descuento)) 
+            case "Primavera" | "Otoño":
+                match destino:
+                    case "Bariloche" | "Cataratas" | "Mar del plata":
+                        precio_descuento = precio - precio * 0.1
+                        alert("Primavera", "El precio es de $"+str(precio_descuento))
+                    case "Cordoba":
+                        alert("Cordoba", "El precio es de $"+str(precio))
             
     
 if __name__ == "__main__":

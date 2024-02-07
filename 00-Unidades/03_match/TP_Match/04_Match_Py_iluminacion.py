@@ -43,7 +43,98 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        lamparitas = int(self.combobox_cantidad.get())
+        precio = int(800)
+        precio_total = precio * lamparitas
+        if lamparitas >= 6 :
+            descuento = precio_total * 0.5
+            precio_condescuento = int(precio_total - descuento)
+            if precio_condescuento > 4000:
+                descuento_a = precio_total * 0.05
+                precio_condescuento = precio_condescuento - descuento_a
+            else:
+                pass
+            alert("Precio", "Su precio final es de "+str(precio_condescuento))
+        else:
+            match lamparitas :
+                case 5:
+                    match marca:
+                        case "ArgentinaLuz":
+                              descuento = precio_total * 0.4
+                              precio_condescuento = int(precio_total - descuento)
+                              if precio_condescuento > 4000:
+                                   descuento_a = precio_total * 0.05
+                                   precio_condescuento = precio_condescuento - descuento_a
+                              else:
+                                  pass 
+                              alert("Precio", "Su precio final es de "+str(precio_condescuento))
+                        case "FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram":
+                              descuento = precio_total * 0.3
+                              precio_condescuento = int(precio_total - descuento)
+                              if precio_condescuento > 4000:
+                                  descuento_a = precio_total * 0.05
+                                  precio_condescuento = precio_condescuento - descuento_a
+                              else:
+                                  pass
+                              alert("Precio", "Su precio final es de "+str(precio_condescuento))
+                case 4:
+                    match marca:
+                        case "ArgentinaLuz" | "FelipeLamparas":
+                            descuento = precio_total * 0.25
+                            precio_condescuento = int(precio_total - descuento)
+                            if precio_condescuento > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_condescuento = precio_condescuento - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_condescuento))
+                        case "JeLuz" | "HazIluminacion" | "Osram":
+                            descuento = precio_total * 0.2
+                            precio_condescuento = int(precio_total - descuento)
+                            if precio_condescuento > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_condescuento = precio_condescuento - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_condescuento))
+                case 3:
+                    match marca:
+                        case "ArgentinaLuz":
+                            descuento = precio_total * 0.15
+                            precio_condescuento = int(precio_total - descuento)
+                            if precio_condescuento > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_condescuento = precio_condescuento - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_condescuento))
+                        case "FelipeLamparas":
+                            descuento = precio_total * 0.10
+                            precio_condescuento = int(precio_total - descuento)
+                            if precio_condescuento > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_condescuento = precio_condescuento - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_condescuento))
+                        case _ :
+                            descuento = precio_total * 0.05
+                            precio_condescuento = int(precio_total - descuento)
+                            if precio_condescuento > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_condescuento = precio_condescuento - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_condescuento))
+                case 1 | 2:
+                            if precio_total > 4000:
+                                descuento_a = precio_total * 0.05
+                                precio_total = precio_total - descuento_a
+                            else: 
+                                pass
+                            alert("Importe", "El precio total es de $"+str(precio_total))
+            
         
     
 if __name__ == "__main__":
