@@ -37,7 +37,6 @@ class App(customtkinter.CTk):
         edad_alumno = int(self.txt_edad.get())
         if edad_alumno<=17 and edad_alumno>13:
             alert("enunciado", "usted es adolescente")
-        else:alert("enunciado", "usted no es adolescente")
 
 
 if __name__ == "__main__":

@@ -46,6 +46,8 @@ class App(customtkinter.CTk):
             pass
         elif edad_persona >= 18 :
             alert("Enunciado", "Su estado civil es "+estado_civil_persona+ " y no es menor de edad")
+        else:
+            pass
 
         
         
