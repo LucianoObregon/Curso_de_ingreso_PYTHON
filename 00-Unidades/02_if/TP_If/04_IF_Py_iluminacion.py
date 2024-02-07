@@ -49,7 +49,7 @@ class App(customtkinter.CTk):
         precio_total = precio_lamparas * cantidad_lamparas
         if precio_total > 4000:
             descuento_a = precio_total * 0.05
-            precio_total =precio_total - descuento_a
+            precio_total = precio_total - descuento_a
         else:
             pass
         if cantidad_lamparas >= 6:
