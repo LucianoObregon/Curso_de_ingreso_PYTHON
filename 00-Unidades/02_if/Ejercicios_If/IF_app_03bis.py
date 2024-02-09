@@ -22,7 +22,7 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
 
-        self.label1 = customtkinter.CTkLabel(master=self, text="Altura")
+        self.label1 = customtkinter.CTkLabel(master=self, text="Altura (Metros)")
         self.label1.grid(row=0, column=0, padx=20, pady=10)
 
         self.txt_altura = customtkinter.CTkEntry(master=self)
@@ -34,7 +34,7 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         altura_jugador = float(self.txt_altura.get())
-        if altura_jugador > (1.80):
+        if altura_jugador >= (1.80):
             alert("enunciado", "Usted puede ser pivot")
         else: alert ("enunciado", "Usted no puede ser pivot")
 

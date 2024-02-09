@@ -60,7 +60,7 @@ class App(customtkinter.CTk):
                     numero_b = int(numero_a)
                     suma_negativos += numero_b
                     contador_negativos += 1
-        mensaje ="Suma positivos = "+str(suma_positivos)+"\nSuma negativos = "+str(suma_negativos)+"\nCantidad de positivos = "+str(contador_positivos)+"\nContador de negativos = "+str(contador_negativos)+"\nla cantidad de ceros es = "+str(contador_ceros)+"\nla diferencia entre la cantidad de negativos y positivos es = "+str(contador_positivos-contador_negativos)
+        mensaje = f"Suma positivos = "+str(suma_positivos)+"\nSuma negativos = "+str(suma_negativos)+"\nCantidad de positivos = "+str(contador_positivos)+"\nContador de negativos = "+str(contador_negativos)+"\nla cantidad de ceros es = "+str(contador_ceros)+"\nla diferencia entre la cantidad de negativos y positivos es = "+str(contador_positivos-contador_negativos)
         alert("Numeros", mensaje)
 if __name__ == "__main__":
     app = App()

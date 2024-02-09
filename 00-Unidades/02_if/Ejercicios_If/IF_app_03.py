@@ -37,7 +37,8 @@ class App(customtkinter.CTk):
         edad_alumno = int(self.txt_edad.get())
         if edad_alumno >= (18):
             alert("enunciado", "usted es mayor")
-        else: alert("enunciado", "usted es menor")
+        else: 
+            alert("enunciado", "usted es menor")
         
 
         

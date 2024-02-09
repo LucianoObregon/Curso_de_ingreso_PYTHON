@@ -26,8 +26,6 @@ class App(customtkinter.CTk):
 
     def __init__(self):
         super().__init__()
-
-        # configure window
         self.title("UTN Fra")
 
         self.btn_validar = customtkinter.CTkButton(
@@ -66,25 +64,16 @@ class App(customtkinter.CTk):
                 candidato_menos_votos = {'nombre': nombre, 'edad': int(edad), 'votos': int(votos)}
 
             nombre = prompt("Nombre", "Ingrese el nombre del siguiente candidato (o 'fin' para terminar):")
-
         if cantidad_candidatos == 0:
             alert("Error", "No se ingresaron candidatos.")
             return
-
-        # a. Candidato con más votos
         alert("Resultado a", f"El candidato con más votos es {candidato_mas_votos['nombre']}.")
-
-        # b. Candidato con menos votos
         alert("Resultado b", f"El candidato con menos votos es {candidato_menos_votos['nombre']} con {candidato_menos_votos['edad']} años.")
-
-        # c. Promedio de edades
         if cantidad_candidatos > 0:
             promedio_edades = total_edades / cantidad_candidatos
             alert("Resultado c", f"El promedio de edades de los candidatos es: {promedio_edades:.2f} años.")
         else:
             alert("Resultado c", "No hay candidatos para calcular el promedio de edades.")
-
-        # d. Total de votos
         alert("Resultado d", f"El total de votos emitidos es: {total_votos}.")
 
 

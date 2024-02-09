@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
 
-        self.label1 = customtkinter.CTkLabel(master=self, text="Altura")
+        self.label1 = customtkinter.CTkLabel(master=self, text="Altura (Centimetros)")
         self.label1.grid(row=0, column=0, padx=20, pady=10)
         
         self.txt_altura = customtkinter.CTkEntry(master=self)

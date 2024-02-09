@@ -27,9 +27,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = int(prompt("numero", "Ingrese un número"))
+        contador = 0
+        contador_pares = 0
+        for i in range(0, numero):
+            contador +=1
+            if contador % 2 == 0:
+                contador_pares +=1
+                print(contador)
             
-        
+        alert("pares", "Hay una cantidad de numeros pares de: " +str(contador_pares))
     
 if __name__ == "__main__":
     app = App()
