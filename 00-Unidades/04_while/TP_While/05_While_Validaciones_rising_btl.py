@@ -26,7 +26,7 @@ class App(customtkinter.CTk):
 
     def __init__(self):
         super().__init__()
-        
+
         self.title("UTN Fra")
 
         self.label0 = customtkinter.CTkLabel(master=self, text="Apellido")
@@ -55,8 +55,49 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        # Get user inputs
+        apellido = self.txt_apellido.get()
+        
+        # Validate Apellido
+        while not apellido:
+            alert("Error", "Por favor, ingrese el apellido.")
+            apellido = prompt(self, "Ingrese el Apellido")
 
+        # Validate Edad
+        edad_str = self.txt_edad.get()
+        while True:
+            if not edad_str.isdigit():
+                alert("Error", "Por favor, ingrese una edad válida.")
+            else:
+                edad = int(edad_str)
+                if 18 <= edad <= 90:
+                    break
+                else:
+                    alert("Error", "La edad debe estar entre 18 y 90 años.")
+            edad_str = prompt(self, "Ingrese la Edad nuevamente")
+
+        # Validate Estado Civil
+        estado_civil = self.combobox_tipo.get()
+        while not estado_civil:
+            alert("Error", "Por favor, seleccione un estado civil.")
+            estado_civil = prompt(self, "Seleccione el Estado Civil")
+
+        # Validate Legajo
+        legajo_str = self.txt_legajo.get()
+        while True:
+            if not legajo_str.isdigit():
+                alert("Error", "Por favor, ingrese un número de legajo válido.")
+            else:
+                legajo = int(legajo_str)
+                if 1000 <= legajo <= 9999:
+                    break
+                else:
+                    alert("Error", "El legajo debe ser un número de 4 cifras sin ceros a la izquierda.")
+            legajo_str = prompt(self, "Ingrese el Legajo nuevamente")
+
+        # Display validated data in message box
+        info_message = f"Apellido: {apellido}\nEdad: {edad}\nEstado Civil: {estado_civil}\nLegajo: {legajo}"
+        alert("Datos Validados", info_message)
 
 if __name__ == "__main__":
     app = App()
